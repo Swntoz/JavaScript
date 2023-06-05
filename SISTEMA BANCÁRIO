@@ -1,0 +1,27 @@
+let opcao, saque, deposito, saldo = 0
+
+do{
+  opcao = Number(prompt("Escolha uma das opçoes: \n(1)Deposito \n(2)Saque \n(3)Saldo \n(4)Sair"))
+
+  switch(opcao){
+    case 1 :
+    deposito = Number(prompt(`Digite o valor do Deposito: R$`))
+    saldo += deposito
+    alert(`Saldo Atual: R$${saldo}`)
+    break
+
+    case 2 :
+    saque = Number(prompt(`Digite o valor do Saque: R$`))
+    if(saque <= saldo){
+      saldo -= saque
+      alert(`Valor do Saque: R$${saque} Saldo Atual: R$${saldo}`)
+    }else{
+      alert(`SALDO INSUFICIENTE!`)
+    }
+    break
+
+    case 3 :
+    alert(`Saldo Atual: R$${saldo}`)
+    break
+  }
+}while(opcao != 4)
