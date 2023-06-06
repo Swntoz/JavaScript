@@ -1,4 +1,4 @@
-/*Propósito do Programa: Ess programa serve como um menu de banco onde o usuário tem 4 opções de ações no menu, 
+/*Propósito do Programa: Esse programa serve como um menu de banco onde o usuário tem 4 opções de ações no menu, 
 Deposito, Saque, Saldo e Saída/Sair.*/
 
 let opcao, saque, deposito, saldo = 0
