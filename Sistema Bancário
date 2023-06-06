@@ -1,27 +1,37 @@
 let opcao, saque, deposito, saldo = 0
 
-do{
-  opcao = Number(prompt("Escolha uma das opçoes: \n(1)Deposito \n(2)Saque \n(3)Saldo \n(4)Sair"))
+//Loop para o usuário ficar no menu enquanto ele não digitar a opçao para sair.
+do {
+  opcao = Number(prompt(`Escolha uma das opçoes:
+  (1)Deposito 
+  (2)Saque 
+  (3)Saldo 
+  (4)Sair`))
+  
+//Switch-case para cada opção do menu.
+  switch (opcao) {
+    case 1:
+    //Deposito
+      deposito = Number(prompt(`Digite o valor do Deposito: R$`))
+      saldo += deposito
+      alert(`Saldo Atual: R$${saldo}`)
+      break
 
-  switch(opcao){
-    case 1 :
-    deposito = Number(prompt(`Digite o valor do Deposito: R$`))
-    saldo += deposito
-    alert(`Saldo Atual: R$${saldo}`)
-    break
+    case 2:
+    //Saque
+      saque = Number(prompt(`Digite o valor do Saque: R$`))
+      //if-else para caso o usuário solicite um valor de saque maior do que o saldo que ele possui.
+      if (saque <= saldo) {
+        saldo -= saque
+        alert(`Valor do Saque: R$${saque} Saldo Atual: R$${saldo}`)
+      } else {
+        alert(`SALDO INSUFICIENTE!`)
+      }
+      break
 
-    case 2 :
-    saque = Number(prompt(`Digite o valor do Saque: R$`))
-    if(saque <= saldo){
-      saldo -= saque
-      alert(`Valor do Saque: R$${saque} Saldo Atual: R$${saldo}`)
-    }else{
-      alert(`SALDO INSUFICIENTE!`)
-    }
-    break
-
-    case 3 :
-    alert(`Saldo Atual: R$${saldo}`)
-    break
+    case 3:
+    //Mostrar Saldo Atual do usuário.
+      alert(`Saldo Atual: R$${saldo}`)
+      break
   }
-}while(opcao != 4)
+} while (opcao != 4)
