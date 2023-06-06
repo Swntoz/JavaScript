@@ -1,3 +1,6 @@
+/*Propósito do Programa: Ess programa serve como um menu de banco onde o usuário tem 4 opções de ações no menu, 
+Deposito, Saque, Saldo e Saída/Sair.*/
+
 let opcao, saque, deposito, saldo = 0
 
 //Loop para o usuário ficar no menu enquanto ele não digitar a opçao para sair.
@@ -7,7 +10,7 @@ do {
   (2)Saque 
   (3)Saldo 
   (4)Sair`))
-  
+
 //Switch-case para cada opção do menu.
   switch (opcao) {
     case 1:
@@ -21,11 +24,12 @@ do {
     //Saque
       saque = Number(prompt(`Digite o valor do Saque: R$`))
       //if-else para caso o usuário solicite um valor de saque maior do que o saldo que ele possui.
-      if (saque <= saldo) {
-        saldo -= saque
-        alert(`Valor do Saque: R$${saque} Saldo Atual: R$${saldo}`)
-      } else {
+      if (saque > saldo) {
         alert(`SALDO INSUFICIENTE!`)
+      } else {
+        saldo -= saque
+        alert(`Valor do Saque: R$${saque} 
+        Saldo Atual: R$${saldo}`)
       }
       break
 
